@@ -16,22 +16,22 @@ int main()
     int r = n;
     while(l <= r){
         int temp = (r-l)/3;
-        int mid1 = l+temp;
-        int mid2 = r-temp;
-        if(a[mid1] == key){
-                pos = mid1;
+        int lo = l+temp;
+        int hi = r-temp;
+        if(a[lo] == key){
+                pos = lo;
                 break;
         }
-        else if(a[mid2-1] == key)
+        else if(a[hi-1] == key)
         {
-                pos = mid2;
+                pos = hi;
                 break;
         }
-        else if(key < a[mid1]) r = mid1-1;
-        else if(key > a[mid2]) l = mid2+1;
+        else if(key < a[lo]) r = lo-1;
+        else if(key > a[hi]) l = hi+1;
         else{
-            l = mid1+1;
-            r = mid2-1;
+            l = lo+1;
+            r = hi-1;
         }
     }
     cout << pos+1;
