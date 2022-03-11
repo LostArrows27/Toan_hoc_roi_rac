@@ -7,9 +7,10 @@ int main(){
     cin >> a >> b;
     int c = a;
     int d = b;
-    while(b != 0){
+    while(a%b != 0){
+        int r = a%b;
         a = b;
-        b = a%b;
+        b = r;
     }
-    cout << "GCD of " << c << " and " << d " is: " << b;
+    cout << "GCD of " << c << " and " << d << " is: " << b;
 }
